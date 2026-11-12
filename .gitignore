@@ -1,0 +1,17 @@
+# Secrets / credentials
+docs/Notes.md
+.env
+.env.*
+*.pem
+credentials.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local / temp
+*.log
+__pycache__/
+node_modules/

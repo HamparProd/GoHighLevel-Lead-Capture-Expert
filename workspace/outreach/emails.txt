@@ -1,0 +1,119 @@
+Use workspace/outreach/preview.html instead of the plain notes below.
+Open http://127.0.0.1:8765/outreach/preview.html
+Click Copy email, then paste into Gmail. The plain versions are only a backup.
+
+Send these one by one, after the calendar hours are Monday–Friday 9:00am–3:00pm Eastern.
+Send from the project inbox. Sign with the name on that inbox.
+Send in the morning, not at night. One email each. Do not text these numbers.
+Booking link: https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+If someone replies stop, do not email them again.
+If someone books, leave the call to the client.
+
+
+1. Blaine Morris — Blaine@gotoplumbingservices.com
+Subject: Missed calls at Go To Plumbing
+
+Hi Blaine,
+
+Go To Plumbing lists a phone number and weekday hours. The job still depends on someone picking up.
+
+I set up a simple system for plumbers: a missed call gets a text back, and the caller can book a time. There is a 10-day trial and no setup fee. The first plan is $147 a month.
+
+Here is a 15-minute look, weekdays 9am–3pm Eastern:
+https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+Reply stop if you don't want another note.
+
+Thanks,
+Gregory
+
+
+2. Mike — MKSPlumbingnc@gmail.com
+Subject: Booking at MKS Plumbing
+
+Hi Mike,
+
+MKS Plumbing takes jobs by phone and email. I didn't see a way for a customer to book a time on their own.
+
+Plumbers use this when they are under a sink and miss the next call. The caller gets a text and picks a time. 10-day trial, no setup fee, first plan $147 a month.
+
+15 minutes, weekdays 9am–3pm Eastern:
+https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+Reply stop if you don't want another note.
+
+Thanks,
+Gregory
+
+
+3. John Kelly — Jkelly0005@gmail.com
+Subject: After-hours calls at John Kelly's Plumbing
+
+Hi John,
+
+Your page says to call or text when something is leaking. That works until you are already on a job.
+
+The setup is small: missed call, text back, customer books the visit. 10-day trial, no setup fee, $147 a month to start.
+
+If you want to see it, pick a time on a weekday between 9am and 3pm Eastern:
+https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+Reply stop if you don't want another note.
+
+Thanks,
+Gregory
+
+
+4. Don Mackling — plumbermackling@gmail.com
+Subject: Missed calls at Mackling Plumbing
+
+Hi Don,
+
+Mackling Plumbing runs on the phone. When you are at a house, the next caller has to try someone else.
+
+A missed call can text them back and let them book. 10-day trial, no setup fee. Starts at $147 a month.
+
+15-minute look, weekdays 9am–3pm Eastern:
+https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+Reply stop if you don't want another note.
+
+Thanks,
+Gregory
+
+
+5. Rick Culp — peace_of_mind_plumbing@yahoo.com
+Subject: Peace of Mind Plumbing, missed calls
+
+Hi Rick,
+
+Peace of Mind is a family shop, so the phone is probably you. A call you can't take is a job that goes to the next plumber on Google.
+
+The system texts that caller and gives them a time to book. 10 days free, no setup fee, then $147 a month if you keep it.
+
+Weekdays 9am–3pm Eastern:
+https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+Reply stop if you don't want another note.
+
+Thanks,
+Gregory
+
+
+6. Mike McGuirt — mkbplumbing.scheduling@yahoo.com
+Subject: Scheduling inbox at MKB Plumbing
+
+Hi Mike,
+
+MKB takes appointments through a scheduling email. That still waits on someone to read it.
+
+This sends a text when a call is missed and lets the customer pick a time. 10-day trial, no setup fee, $147 a month after that.
+
+15 minutes, weekdays 9am–3pm Eastern:
+https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+Reply stop if you don't want another note.
+
+Thanks,
+Gregory

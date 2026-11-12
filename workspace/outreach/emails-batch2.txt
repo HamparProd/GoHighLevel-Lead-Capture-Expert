@@ -1,0 +1,32 @@
+Use workspace/outreach/preview-batch2.html instead of the plain notes below.
+Open that file in a browser (or http://127.0.0.1:8765/outreach/preview-batch2.html if the preview server is up).
+Click Copy email, then paste into Gmail. Same premium HTML card as batch 1.
+
+Same booking link as the first six:
+https://api.leadconnectorhq.com/widget/bookings/free-audit-15min
+
+That link is the client’s Free audit calendar (15-min sales call with him). Not a different product.
+Publish Free audit in GHL before sending, or the button 404s.
+
+Send from the project inbox. Sign Gregory. One email each. No texts.
+If someone replies stop, do not email them again.
+If someone books, leave the call to the client.
+
+
+1. Chris — osborneplumbinganddrain@gmail.com
+Subject: When Osborne Plumbing is already on a job
+
+2. Geison — service@unitedplumbingnc.com
+Subject: United Plumbing still books by phone
+
+3. Jeff Prince — jeffprincecltnc@gmail.com
+Subject: Jeff, the next caller doesn't leave a voicemail
+
+4. Gary Shook — garyshookplumbing@gmail.com
+Subject: Gary Shook Plumbing, after you leave for a job
+
+5. Will — info.serviceproplumbing@yahoo.com
+Subject: Service Pro can't answer two phones
+
+6. John Bird — drdrainsplumbingservices@gmail.com
+Subject: Dr. Drain's is still booking from the phone

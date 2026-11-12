@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Never miss a customer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14261f;
+      --green: #1c6b45;
+      --green-dark: #12382c;
+      --gold: #b8893d;
+      --cream: #f4f1ea;
+      --card: #fffdf9;
+      --line: #e4ddd0;
+      --muted: #5d675f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Outfit, sans-serif;
+      line-height: 1.5;
+    }
+    img { max-width: 100%; }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 5;
+      background: rgba(244, 241, 234, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 16px; }
+    .mark { font-weight: 600; letter-spacing: 0.04em; }
+    nav { display: flex; gap: 18px; align-items: center; }
+    nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+    .btn, button.btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--green-dark); color: white; text-decoration: none;
+      border: 0; border-radius: 999px; padding: 12px 18px; font: 600 0.95rem Outfit, sans-serif;
+      cursor: pointer;
+    }
+    .btn.light { background: white; color: var(--ink); }
+    .hero { padding: 64px 0 28px; }
+    .kicker { color: var(--green); font-weight: 600; letter-spacing: 0.14em; font-size: 0.78rem; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Fraunces, serif; font-weight: 560; letter-spacing: -0.03em; margin: 0; }
+    h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 0.98; max-width: 14ch; margin: 12px 0 18px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; }
+    .lede { font-size: 1.15rem; max-width: 42rem; color: var(--muted); }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .grid-3, .grid-2, .plans { display: grid; gap: 16px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
+    .card, .plan, .step {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .card strong, .step strong { display: block; font-size: 1.15rem; margin: 8px 0; }
+    .card p, .step p, .plan li { color: var(--muted); }
+    section { padding: 42px 0; }
+    .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+    .num { color: var(--gold); font-weight: 600; letter-spacing: 0.08em; font-size: 0.82rem; }
+    .panel {
+      background: var(--green-dark); color: white; border-radius: 28px; padding: 36px;
+    }
+    .panel p { color: #d7e4dc; }
+    .plans { grid-template-columns: repeat(3, 1fr); margin-top: 22px; }
+    .plan { position: relative; }
+    .plan.featured { border: 2px solid var(--green); }
+    .price { font-family: Fraunces, serif; font-size: 2.6rem; margin: 8px 0; }
+    .price span { font-family: Outfit, sans-serif; font-size: 1rem; color: var(--muted); }
+    .plan ul { margin: 0; padding-left: 18px; }
+    .plan li { margin: 8px 0; }
+    .tag {
+      position: absolute; top: -12px; left: 18px;
+      background: var(--green); color: white; border-radius: 999px;
+      padding: 4px 10px; font-size: 0.75rem; font-weight: 600;
+    }
+    .calendar {
+      background: white; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); min-height: 720px;
+    }
+    .calendar iframe { width: 100%; height: 760px; border: 0; }
+    footer { padding: 28px 0 48px; color: var(--muted); }
+    @media (max-width: 800px) {
+      .grid-3, .grid-2, .plans, .steps { grid-template-columns: 1fr; }
+      nav .hide { display: none; }
+      h1 { max-width: none; }
+      .panel { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <div class="mark">Never miss a customer</div>
+      <nav>
+        <a class="hide" href="#system">The system</a>
+        <a class="hide" href="#plans">Plans</a>
+        <a class="btn" href="#book">Book a 15-min look</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker">For service businesses</div>
+        <h1>Your phone rang. Nobody picked up.</h1>
+        <p class="lede">We install one system that answers every inquiry, rescues missed calls, books the job, and asks happy customers for a review. If you do not have a website, the landing page is part of the setup.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#book">Book a free 15-minute look</a>
+          <a class="btn light" href="#plans">See the plans</a>
+        </div>
+        <p class="lede">10-day free trial on every plan. No setup fee. Monday–Friday, 9am–3pm EST.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="kicker">The problem</div>
+        <h2>Busy is good. Missed inquiries are not.</h2>
+        <div class="grid-3" style="margin-top:22px">
+          <article class="card">
+            <strong>Calls you cannot answer</strong>
+            <p>You are with a customer or on a job. The caller hangs up and rings the next business on Google.</p>
+          </article>
+          <article class="card">
+            <strong>Forms that wait until morning</strong>
+            <p>Someone reaches out at 10pm. By the time you reply, they have already booked with someone else.</p>
+          </article>
+          <article class="card">
+            <strong>Reviews nobody asks for</strong>
+            <p>Customers are happy, but only a few leave a review, so competitors look stronger online.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="system">
+      <div class="wrap">
+        <div class="kicker">Six steps</div>
+        <h2>Answer faster. Book more. Do it again.</h2>
+        <div class="steps">
+          <article class="step"><div class="num">01</div><strong>Capture every inquiry</strong><p>Calls, forms, and messages land in one inbox on your phone.</p></article>
+          <article class="step"><div class="num">02</div><strong>Reply in seconds</strong><p>A new form gets a text right away, and you get the alert.</p></article>
+          <article class="step"><div class="num">03</div><strong>Rescue missed calls</strong><p>If you cannot pick up, the caller still gets a text and the conversation continues.</p></article>
+          <article class="step"><div class="num">04</div><strong>Book automatically</strong><p>They pick a time. Both of you get a reminder before the visit.</p></article>
+          <article class="step"><div class="num">05</div><strong>Earn 5-star reviews</strong><p>After the job, every customer is asked for a Google review. One reminder if they forget.</p></article>
+          <article class="step"><div class="num">06</div><strong>Bring customers back</strong><p>Past customers get a simple check-in or seasonal offer when the diary has gaps.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-2">
+        <div class="panel">
+          <div class="kicker" style="color:#e7c98a">No website yet</div>
+          <h2>We build the page that books the job.</h2>
+          <p>A lot of service businesses have a Google listing and no real site. Starter includes a one-page site with your services, phone number, hours, and a booking button. If you already have a site, we connect that instead.</p>
+        </div>
+        <div class="panel" style="background:#1c6b45">
+          <div class="kicker" style="color:#e7c98a">Reputation</div>
+          <h2>Reviews go out after the job, not when you remember.</h2>
+          <p>Happy customers get a short text with your Google review link. If they do not tap it, one reminder follows. You see new reviews in the same place as your leads.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans">
+      <div class="wrap">
+        <div class="kicker">Plans</div>
+        <h2>Simple monthly plans.</h2>
+        <p class="lede">No setup fee. Add a card to start the 10-day free trial. Cancel during the trial and you pay nothing. The card is charged the day after the trial ends.</p>
+        <div class="plans">
+          <article class="plan">
+            <h3>Starter</h3>
+            <div class="price">$147 <span>/ month</span></div>
+            <ul>
+              <li>A landing page, or we connect the site you have</li>
+              <li>Every lead kept in one place</li>
+              <li>Missed-call text back</li>
+              <li>Online booking</li>
+              <li>Basic follow-up</li>
+            </ul>
+          </article>
+          <article class="plan featured">
+            <div class="tag">Most businesses</div>
+            <h3>Growth</h3>
+            <div class="price">$297 <span>/ month</span></div>
+            <ul>
+              <li>Everything in Starter</li>
+              <li>AI receptionist and website chat</li>
+              <li>Text and email follow-up</li>
+              <li>Review requests and reminders</li>
+              <li>Appointment reminders</li>
+              <li>Lead pipeline and a monthly check-in</li>
+            </ul>
+          </article>
+          <article class="plan">
+            <h3>Premium</h3>
+            <div class="price">$597 <span>/ month</span></div>
+            <ul>
+              <li>Everything in Growth</li>
+              <li>Custom automations</li>
+              <li>More than one calendar or location</li>
+              <li>Campaigns that bring past customers back</li>
+              <li>Priority support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="wrap">
+        <div class="kicker">Next step</div>
+        <h2>See it on a 15-minute call.</h2>
+        <p class="lede">Monday–Friday, 9am–3pm EST. You keep running the business. We handle the build.</p>
+        <div class="calendar">
+          <iframe title="Book a 15 minute audit" src="https://api.leadconnectorhq.com/widget/bookings/free-audit-15min"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">10-day free trial. No setup fee. Month to month after you decide to stay.</div>
+  </footer>
+</body>
+</html>

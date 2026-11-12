@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Never miss a customer</title>
+  <meta name="description" content="A simple system that answers every enquiry, rescues missed calls, and turns happy customers into five-star reviews.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4f1ea;
+      --ink: #17211e;
+      --muted: #5c675f;
+      --green: #1b3c34;
+      --green-2: #245348;
+      --gold: #c8963e;
+      --gold-2: #e2b15a;
+      --card: #fffdf8;
+      --line: #e3ddd2;
+      --soft: #ece7dc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(27, 60, 52, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27, 60, 52, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: Outfit, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(10px);
+      background: rgba(244, 241, 234, 0.9);
+      border-bottom: 1px solid rgba(27, 60, 52, 0.08);
+    }
+    .bar { display: flex; align-items: center; justify-content: space-between; min-height: 72px; }
+    .mark { font-weight: 600; letter-spacing: -0.02em; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #1b1408;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 12px 18px;
+      border: 0;
+    }
+    .btn.dark { background: var(--green); color: white; }
+    h1, h2, h3 { font-family: Fraunces, serif; font-weight: 650; letter-spacing: -0.03em; margin: 0; }
+    .kicker { color: var(--green-2); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+    .hero { padding: 72px 0 36px; }
+    h1 { font-size: clamp(3.2rem, 7vw, 6.4rem); line-height: 0.92; max-width: 14ch; }
+    .lede { max-width: 46ch; font-size: 1.15rem; color: var(--muted); margin: 22px 0 28px; }
+    .hero-actions { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+    .quiet { color: var(--muted); font-size: 0.95rem; }
+    .wheel {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin: 54px 0 10px;
+    }
+    .step-pill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 14px 14px;
+      min-height: 132px;
+    }
+    .num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+    .step-pill strong { display: block; margin-top: 8px; line-height: 1.25; }
+    section { padding: 28px 0 10px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.05; max-width: 18ch; }
+    .problem-grid, .split, .price-grid, .plan { display: grid; gap: 16px; margin-top: 22px; }
+    .problem-grid { grid-template-columns: repeat(3, 1fr); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(27, 60, 52, 0.04);
+    }
+    .card h3 { font-size: 1.45rem; margin: 10px 0; }
+    .card p, .copy p { color: var(--muted); }
+    .icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--green); color: white; font-size: 0.95rem;
+    }
+    .note { margin-top: 18px; font-size: 1.2rem; }
+    .note b { color: var(--green); }
+    .flow { display: grid; gap: 18px; margin-top: 8px; }
+    .flow-item {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+    .phone {
+      background: var(--green);
+      color: white;
+      border-radius: 28px;
+      padding: 18px;
+      min-height: 230px;
+      box-shadow: 0 18px 40px rgba(27, 60, 52, 0.16);
+    }
+    .phone header, .who { display: flex; gap: 10px; align-items: center; font-weight: 600; }
+    .dot { width: 28px; height: 28px; border-radius: 50%; background: var(--gold-2); }
+    .meta { color: rgba(255,255,255,0.62); font-size: 0.82rem; text-align: right; margin: 14px 0 8px; }
+    .bubble { background: #2f6d5d; border-radius: 16px 16px 16px 6px; padding: 12px 14px; max-width: 92%; }
+    .bubble.them { background: white; color: var(--ink); border-radius: 16px 16px 6px 16px; margin: 10px 0 0 auto; }
+    .split { grid-template-columns: 1.2fr 0.8fr; }
+    .dark-panel {
+      background: var(--green);
+      color: white;
+      border-radius: 28px;
+      padding: 28px;
+    }
+    .dark-panel p { color: rgba(255,255,255,0.78); }
+    .price-grid { grid-template-columns: 1fr 1fr; }
+    .amount { font-family: Fraunces, serif; font-size: 4rem; line-height: 1; margin: 8px 0; }
+    .amount span { font-family: Outfit, sans-serif; font-size: 1rem; color: var(--muted); }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 8px 0; }
+    .plan { grid-template-columns: repeat(4, 1fr); }
+    .plan .card strong { display: block; color: var(--gold); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .book {
+      margin: 36px 0 64px;
+      background: var(--green);
+      color: white;
+      border-radius: 32px;
+      padding: 42px 36px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .book p { color: rgba(255,255,255,0.78); }
+    .book .btn { background: var(--gold-2); }
+    footer { padding: 10px 0 40px; color: var(--muted); font-size: 0.9rem; }
+    @media (max-width: 860px) {
+      .wheel, .problem-grid, .flow-item, .split, .price-grid, .plan, .book { grid-template-columns: 1fr; }
+      .hero { padding-top: 42px; }
+      h1 { font-size: 3.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <div class="mark">Never miss a customer</div>
+      <a class="btn" href="#book">Book a call</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <p class="kicker">The 6-step flywheel</p>
+      <h1>Never miss a customer.</h1>
+      <p class="lede">A simple system that answers every enquiry, rescues missed calls, and turns happy customers into five-star reviews.</p>
+      <div class="hero-actions">
+        <a class="btn dark" href="#book">Book your 30-minute call</a>
+        <span class="quiet">Monday–Friday, 9am–3pm EST</span>
+      </div>
+      <div class="wheel">
+        <article class="step-pill"><span class="num">01</span><strong>Capture every enquiry</strong></article>
+        <article class="step-pill"><span class="num">02</span><strong>Reply in seconds</strong></article>
+        <article class="step-pill"><span class="num">03</span><strong>Rescue missed calls</strong></article>
+        <article class="step-pill"><span class="num">04</span><strong>Book automatically</strong></article>
+        <article class="step-pill"><span class="num">05</span><strong>Earn 5-star reviews</strong></article>
+        <article class="step-pill"><span class="num">06</span><strong>Bring customers back</strong></article>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <p class="kicker">The problem</p>
+        <h2>Busy is good. Missed enquiries are not.</h2>
+        <div class="problem-grid">
+          <article class="card">
+            <div class="icon">☎</div>
+            <h3>Calls you cannot answer</h3>
+            <p>You are with a customer or on a job. The caller hangs up and rings the next business on Google.</p>
+          </article>
+          <article class="card">
+            <div class="icon">✉</div>
+            <h3>Forms that wait until morning</h3>
+            <p>Someone enquires at 10pm. By the time you reply, they have already booked with someone else.</p>
+          </article>
+          <article class="card">
+            <div class="icon">★</div>
+            <h3>Reviews nobody asks for</h3>
+            <p>Your customers are happy, but only a few leave a review, so competitors look stronger online.</p>
+          </article>
+        </div>
+        <p class="note">None of this is about working harder. <b>It just needs a system.</b></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="kicker">How it works</p>
+        <h2>Answer faster. Book more. Do it again.</h2>
+        <div class="flow">
+          <article class="flow-item">
+            <div class="copy">
+              <p class="kicker">Step 01</p>
+              <h2>Capture every enquiry</h2>
+              <p>Website forms, Facebook messages, Google chats, and phone calls all land in one inbox on your phone.</p>
+            </div>
+            <div class="phone">
+              <div class="who"><span class="dot"></span> Inbox</div>
+              <p class="meta">One place for every lead</p>
+              <div class="bubble">Sarah: Do you have anything free this week?</div>
+              <div class="bubble them">James: missed-call text sent</div>
+            </div>
+          </article>
+          <article class="flow-item">
+            <div class="copy">
+              <p class="kicker">Step 02</p>
+              <h2>Reply in seconds</h2>
+              <p>The moment someone fills in a form, they get a text from the business and you get an alert.</p>
+            </div>
+            <div class="phone">
+              <div class="who"><span class="dot"></span> Oakwood Home Services</div>
+              <p class="meta">Form submitted at 9:42pm</p>
+              <div class="bubble">Hi Sarah, thanks for getting in touch with Oakwood Home Services. I am getting everything ready for you now. Do mornings or afternoons usually suit you better?</div>
+            </div>
+          </article>
+          <article class="flow-item">
+            <div class="copy">
+              <p class="kicker">Step 03</p>
+              <h2>Rescue missed calls</h2>
+              <p>When a call is missed, the caller gets a text straight away. The conversation stays with you.</p>
+            </div>
+            <div class="phone">
+              <div class="who"><span class="dot"></span> Oakwood Home Services</div>
+              <p class="meta">Missed call at 6:15pm</p>
+              <div class="bubble">Sorry we missed your call. This is Oakwood Home Services. How can we help?</div>
+              <div class="bubble them">Hi, I need a quote for next week.</div>
+            </div>
+          </article>
+          <article class="flow-item">
+            <div class="copy">
+              <p class="kicker">Step 04</p>
+              <h2>Book automatically</h2>
+              <p>Replies lead to the calendar. People pick a time by text, and everyone gets a reminder.</p>
+            </div>
+            <div class="phone">
+              <div class="who"><span class="dot"></span> Oakwood Home Services</div>
+              <p class="meta">Added to the calendar</p>
+              <div class="bubble">Our next free times are Tuesday at 10am or Wednesday at 2pm. Which works for you?</div>
+              <div class="bubble them">Wednesday at 2pm.</div>
+            </div>
+          </article>
+          <article class="flow-item">
+            <div class="copy">
+              <p class="kicker">Step 05</p>
+              <h2>Earn 5-star reviews</h2>
+              <p>After the job, the customer gets a short text asking for a Google review, plus one gentle reminder.</p>
+            </div>
+            <div class="phone">
+              <div class="who"><span class="dot"></span> Oakwood Home Services</div>
+              <p class="meta">Sent after the visit</p>
+              <div class="bubble">Thanks for choosing Oakwood Home Services today, Priya. Would you mind leaving us a quick review? It only takes a minute.</div>
+            </div>
+          </article>
+          <article class="flow-item">
+            <div class="copy">
+              <p class="kicker">Step 06</p>
+              <h2>Bring customers back</h2>
+              <p>Past customers get a friendly check-in or a seasonal offer, so quiet days fill up again.</p>
+            </div>
+            <div class="phone">
+              <div class="who"><span class="dot"></span> Oakwood Home Services</div>
+              <p class="meta">Past customer campaign</p>
+              <div class="bubble">Hi James, it has been a while. We have a few spaces next week. Would you like one?</div>
+              <div class="bubble them">Yes please, is Thursday free?</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div class="card">
+          <p class="kicker">Your part</p>
+          <h2>One 30-minute call. We handle the rest.</h2>
+          <ul>
+            <li>Access to the website form, or the web person’s details</li>
+            <li>The Google Business Profile link</li>
+            <li>A past customer list, if there is one</li>
+            <li>Opening hours, services, and how bookings should work</li>
+            <li>Business details for text-message registration</li>
+          </ul>
+        </div>
+        <div class="dark-panel">
+          <p class="kicker" style="color:#e2b15a">Go live</p>
+          <h2 style="color:white">Live within 2 days</h2>
+          <p>Day 1 morning is the call. Day 1 afternoon the system is built. Day 2 morning it is tested. Day 2 afternoon it goes live, with a short walkthrough.</p>
+          <p>Phone networks have to approve business texting. If that takes longer, you get an update.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="kicker">Investment</p>
+        <h2>Simple, honest pricing.</h2>
+        <div class="price-grid">
+          <article class="card">
+            <p class="kicker">Setup</p>
+            <div class="amount">$300</div>
+            <p>One-off. Waived for founding clients.</p>
+          </article>
+          <article class="card">
+            <p class="kicker">Monthly</p>
+            <div class="amount">$300 <span>/ month</span></div>
+            <p>The full system, the business number, upkeep, small changes, and a monthly summary.</p>
+          </article>
+        </div>
+        <div class="plan">
+          <article class="card"><strong>Promise</strong><p>Live within 2 days of getting access, or the first month is free.</p></article>
+          <article class="card"><strong>Contract</strong><p>Month to month after the first 3 months.</p></article>
+          <article class="card"><strong>The call</strong><p>One 30-minute call. We collect access and learn how the business works.</p></article>
+          <article class="card"><strong>Worth asking</strong><p>What is one extra booking a month worth to the business?</p></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="book" id="book">
+        <div>
+          <p class="kicker" style="color:#e2b15a">Next step</p>
+          <h2 style="color:white">Book a call and see it working.</h2>
+          <p>30 minutes. Monday–Friday, 9am–3pm EST. You keep running the business. We build, test, and look after the system.</p>
+        </div>
+        <a class="btn" href="https://api.leadconnectorhq.com/widget/bookings/free-audit-15min" target="_blank" rel="noopener">Book your call</a>
+      </section>
+      <footer>Booking notices go to the sales calendar. Texts send only after the business number is approved.</footer>
+    </div>
+  </main>
+</body>
+</html>
